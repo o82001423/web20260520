@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {   
+        margin-top: 20px;
+        width: 100%;
+        height: 40vh;
+        border: 20px solid rgb(31, 182, 106);
+        box-sizing: border-box; /* 防止邊框撐破網頁 */
+        
+        /* 💡 核心修改 1：使用 Flexbox 讓裡面的 box 排成同一排 */
+        display: flex;
+        flex-direction: row;     /* 水平排列 */
+        justify-content: center; /* 讓整排在畫面中間（可依需求改為 flex-start 靠左） */
+        align-items: center;     /* 垂直置中 */
+        gap: 200px;               /* 每個盒子之間的間距，取代原本不好控制的 left */
+    }
+
+    /* 共同樣式：把重複的設定寫在一起，代碼更乾淨 */
+    .box1, .box2, .box3, .box4 {
+        position: relative;
+        height: 300px;
+        width: 300px;
+        background-size: 300px 300px;
+        background-repeat: no-repeat;
+    }
+
+    /* 💡 核心修改 2：把所有數字的共同樣式抓出來，用 opacity 變淡 */
+    .box01, .box02, .box03, .box04 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 89px;
+        color: black;
+        opacity: 0.1; /* 值介於 0~1，0.3 代表 30% 不透明度（變很淡） */
+    }
+
+    /* 個別設定背景色與圖片 */
+    .box1 {
+        background-image: url(./jpg/1.jpg);
+    }
+
+    .box2 {
+ 
+        background-image: url(./jpg/2.jpg);
+    }
+
+    .box3 {
+      
+       background-image: url(./jpg/3.jpg);
+    }
+
+    .box4 {
+      
+       background-image: url(./jpg/4.jpg); /* 補上原本漏掉的 box4 */
+    }
+
+</style>
+
+<body>
+    <div class="box1">
+        <div class="box01">1</div>
+    </div>
+  
+    <div class="box2">
+        <div class="box02">2</div>
+    </div>
+
+    <div class="box3">
+        <div class="box03">3</div>
+    </div>
+    
+    <div class="box4">
+        <div class="box04">4</div>
+    </div>
+</body>
+
+</html>
